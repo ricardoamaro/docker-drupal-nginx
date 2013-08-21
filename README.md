@@ -15,7 +15,7 @@ curl get.docker.io | sudo sh -x
 ```
 $ git clone https://github.com/ricardoamaro/docker-drupal-nginx.git
 $ cd docker-drupal-nginx
-$ docker build -t="docker-drupal-nginx" .
+$ sudo docker build -t="docker-drupal-nginx" .
 ```
 
 ## And run the container, connecting port 80:
