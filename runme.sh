@@ -2,7 +2,7 @@
 
 if (sudo docker ps | grep docker-drupal-nginx | grep -q "80->80") ; then
 	echo "*** This docker is already running on port 80 ***"
-	echo "You can use 'docker stop {instance id}' to end it"
+	echo "You can use 'sudo docker stop {instance id}' to end it"
 	echo ""
 else
   if [ ! -f /usr/local/bin/docker ]; then  
