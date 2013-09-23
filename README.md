@@ -6,8 +6,8 @@ To build, make sure you have Docker [installed](http://www.docker.io/gettingstar
 
 ## Install docker:
 ```
-sudo apt-get -y install docker
-curl get.docker.io | sudo sh -x
+sudo apt-get -y install lxc-docker
+curl get.docker.io | sudo sh -x
 ```
 
 ## Installation
