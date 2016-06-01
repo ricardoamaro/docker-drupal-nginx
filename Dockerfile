@@ -28,12 +28,12 @@ RUN sed -i -e "s/;cgi.fix_pathinfo=1/cgi.fix_pathinfo=0/g" /etc/php5/fpm/php.ini
 RUN sed -i -e "s/;daemonize\s*=\s*yes/daemonize = no/g" /etc/php5/fpm/php-fpm.conf
 RUN find /etc/php5/cli/conf.d/ -name "*.ini" -exec sed -i -re 's/^(\s*)#(.*)/\1;\2/g' {} \;
 
-# nginx site conf
-ADD ./nginx-site.conf /etc/nginx/sites-available/default
-
 # Supervisor Config
 RUN /usr/bin/easy_install supervisor
 ADD ./supervisord.conf /etc/supervisord.conf
+
+# nginx site conf
+ADD ./nginx-site.conf /etc/nginx/sites-available/default
 
 # Retrieve drupal
 RUN rm -rf /var/www/ ; cd /var ; drush dl drupal ; mv /var/drupal*/ /var/www/
