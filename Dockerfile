@@ -9,10 +9,10 @@ RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -s /bin/true /sbin/initctl
 
 # Basic Requirements
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server mysql-client nginx php5-fpm php5-mysql php-apc pwgen python-setuptools curl git unzip
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install mysql-server mysql-client nginx php7-fpm php7-mysql php-apc pwgen python-setuptools curl git unzip
 
 # Drupal Requirements
-RUN DEBIAN_FRONTEND=noninteractive apt-get -y install php5-curl php5-gd php5-intl php-pear php5-imap php5-memcache memcached drush mc
+RUN DEBIAN_FRONTEND=noninteractive apt-get -y install php7-curl php7-gd php7-intl php-pear php7-imap php7-memcache memcached drush mc
 
 RUN apt-get clean
 
